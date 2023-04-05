@@ -1,0 +1,103 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+.main-header {
+    font-size: .95em;
+}
+.main-nav li {
+    margin: 12px 28px;
+  }
+
+h1,
+h2 {
+	margin-top: 0;
+}
+
+.banner,
+.row,
+.main-footer {
+    text-align: center;
+}
+
+/* ---- Layout Containers ---- */
+
+.main-nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  background: rgb(238, 238, 238);
+}
+
+.name {
+  flex-grow: 3;
+  align-self: flex-start;
+}
+
+.banner {
+    display: flex;
+    background-color: rgb(204, 221, 238);
+    height: 200px;
+    margin: auto;
+    align-items:center;
+    justify-content:center;
+}
+
+.primary{
+    display: flex;
+    height: 80px;
+    margin: auto;
+    align-items:center;
+    justify-content:center;
+}
+
+.row {
+  height: 120px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+#one,
+#two,
+#three,
+#four {
+  width: 500px;
+	height: 100px;
+  align-items: stretch;
+	padding: 10px;
+	border: 10px solid white;
+	background-color: rgb(136, 153, 170)
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.secondary{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  background-color: rgb(204, 221, 238);
+  width: 8rem;
+  height: 2.5rem; 
+  margin: auto;
+  left: 0;
+  right: 0;
+	border: 10px solid white;
+}
+
+@media screen and (min-width: 1200px){
+  .row {
+    width: 1200px;
+  }
+}

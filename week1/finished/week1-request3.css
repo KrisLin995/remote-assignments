@@ -1,0 +1,179 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+.main-header {
+    font-size: .95em;
+}
+.main-nav li {
+    margin: 12px 28px;
+  }
+
+h1,
+h2 {
+	margin-top: 0;
+}
+
+.banner,
+.row,
+.main-footer {
+    text-align: center;
+}
+
+.icon img {
+  height:25px;
+  width: 25px;
+  margin-top: 10px;
+  margin-right: 60px;
+}
+/* ---- Layout Containers ---- */
+
+.main-nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  background: rgb(238, 238, 238);
+}
+
+.name {
+  flex-grow: 3;
+  align-self: flex-start;
+}
+
+.banner {
+    display: flex;
+    background-color: rgb(204, 221, 238);
+    height: 200px;
+    margin: auto;
+    align-items:center;
+    justify-content:center;
+}
+
+.primary{
+    display: flex;
+    height: 80px;
+    margin: auto;
+    align-items:center;
+    justify-content:center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+  height: 120px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  align-items: flex-end;
+}
+
+#one,
+#two,
+#three,
+#four {
+  width: 500px;
+  height: 100px;
+  align-items: stretch;
+  padding: 10px;
+  border: 10px solid white;
+  background-color: rgb(136, 153, 170)
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.secondary{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(204, 221, 238);
+  width: 8rem;
+  height: 2.5rem;
+  border: 10px solid white;
+  position: relative;
+
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px){
+  .row {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+ #one,
+ #two,
+ #three,
+ #four {
+    flex: 1;     
+ }
+ #three,
+ #four {
+    order: 1;    
+ }
+ #break {
+    order: 2;
+ }
+ .secondary {
+    order:3;
+ }
+ .item {
+  display: none;
+ }
+ .main-nav .icon {
+  display: block;
+ }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .row {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+ #one,
+ #two,
+ #three,
+ #four {
+  flex: 1;     
+  }
+ #three, 
+ #four {
+  order: 1;    
+  }
+ #break {
+  order: 2;
+  }
+  .secondary {
+   order:3;
+  }
+  .icon img {
+   display: none
+  }
+
+}
+
+@media screen and (min-width: 1200px){
+ .row {
+   width: 1200px;
+  }
+  .secondary {
+   margin-top: 15%; 
+  }
+  .icon img {
+   display: none
+  }
+}
+  

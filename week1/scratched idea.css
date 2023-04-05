@@ -1,0 +1,83 @@
+#one {
+    float:left;
+    background-color: rgb(139, 169, 238);
+    box-sizing: border-box;
+    width: 200px;
+    height: 130px;
+    margin:5px;
+    padding:5px;
+}
+
+#three {
+    float:right;
+    background-color: rgb(139, 169, 238);
+    box-sizing: border-box;
+    width: 200px;
+    height: 130px;
+    margin-top:50px;
+    margin-right:90px;
+    padding:5px;
+}
+
+#two {
+    float:left;
+    background-color: rgb(139, 169, 238);
+    box-sizing: border-box;
+    width: 200px;
+    height: 130px;
+    margin-left:100px;
+    margin-top:7px;
+    padding:5px;
+}
+
+#four  {
+    float:left;
+    background-color: rgb(139, 169, 238);
+    box-sizing: border-box;
+    width: 200px;
+    height: 130px;
+    margin-top:50px;
+    padding:5px;
+}
+    
+
+
+<footer class="main-footer">
+<div class="footer-inner">
+       <span></span>
+</div>
+</footer>
+
+.main-footer {
+    justify-content: center;
+    margin: auto;
+    background-color: rgb(204, 221, 238);
+    position: absolute;
+    bottom: 0;
+    width: 10%;
+    height: 2.5rem; 
+  }
+  
+
+  @media screen and (max-width: 800px){
+    .row {
+        width: 100%;
+        margin: 0 auto;
+        max-width: calc(100% - 16rem);
+    }
+    #three,
+    #four {
+        order: 1;    
+    }
+    #break {
+        order: 2;
+    }
+    .secondary {
+        order:3;
+        margin-top: 2rem;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        transform: none;
+      }
+}

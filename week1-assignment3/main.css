@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "微軟正黑體", Calibri, DFkai-sb, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal
+}
+
+table th {
+    font-weight: normal;
+    height:40px;
+}
+
+table .firstrow {
+    font-weight: bold;
+    color:rgb(56, 53, 53)
+}
+
+.top img {
+    max-width: 60vh;
+    height: auto;
+}
+
+.menu img {
+    height: 3vh;
+    width:3vh;
+    margin: 12px 28px;
+}
+
+.profile img {
+    height: 5vh;
+    width: 5vh;
+    display: flex;
+    align-self: flex-end;
+}
+
+.main-nav li {
+    margin: 12px 28px;
+    list-style-type: none;
+}
+
+.main-nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  height:60px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  align-items: center;
+}
+
+.main-nav li a {
+    color: black;
+    text-decoration: none; /* optional: remove the underline */
+    font-weight: bold;
+}
+
+.main-nav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    background-color: rgb(241,243,244);
+
+  }
+
+/* Styles for the dropdown menu */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    padding: 25px 60px;
+    align-items: stretch;
+    font-weight: 0;
+  }
+  
+  .dropdown-menu li {
+    margin: 0;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+
+.more {
+   display: none;
+}
+.translation p {
+    display: inline-block;
+    margin: 30px 0;
+ }
+
+ #translation1 {
+    margin-left: 30px;
+ }
+
+ #translation2 {
+    margin-right: 10px;
+ }
+
+ #translation3 {
+    margin-left: 10px;
+ }
+
+ #translation6 {
+    float: right;
+    margin-right: 40px;
+ }
+
+section {
+    position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+}
+
+.sticky2 {
+  background-image: url('../week1/background-sticky.png');
+  background-size: cover; /* adjust to your needs */
+  background-position: center; 
+  height: 800px;
+}
+  @media screen and (min-width: 600px){
+     .menu {
+      display: none;
+     }
+}
+     
