@@ -4,7 +4,75 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
+
+.nav {
+  position: fixed;
+  z-index: 9999;
+  width: 220px;
+  height: 100%;
+  top: 0;
+  right: -350px;
+  background-color: white;
+  border-left: 1.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.open .nav {
+  transform: translateX(0);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: flex-start;
+  height: 100%;
+  text-align: left;
+}
+
+.nav-links li {
+  margin: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* add this line */
+}
+
+.container li {
+  text-align: left;
+  margin: 30px 15px;
+  margin-top: 20px;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.icon {
+  display: none;
+  cursor: pointer;
+}
+
+
+.nav-close {
+  background: none;
+  border: none;
+  display: flex;
+  margin: 5px;
+  margin-left:auto;
+  font-size: 20px;
+  font-family:  "Times New Roman", Times, serif;;
+}
+
+
 
 ul {
     margin: 0;
@@ -45,6 +113,18 @@ h2 {
   background: rgb(238, 238, 238);
 }
 
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
 .name {
   flex-grow: 3;
   align-self: flex-start;
@@ -70,23 +150,28 @@ h2 {
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.row {
+.row1,
+.row2 {
   height: 120px;
   display:flex;
   flex-wrap:wrap;
   justify-content: center;
   margin: auto;
   position: relative;
-  align-items: flex-end;
+  align-items: center;
 }
 
 #one,
 #two,
 #three,
-#four {
+#four,
+#five,
+#six,
+#seven,
+#eight {
   width: 500px;
   height: 100px;
   align-items: stretch;
@@ -108,26 +193,84 @@ h2 {
   width: 8rem;
   height: 2.5rem;
   border: 10px solid white;
-  position: relative;
+  position: relative; 
+  left: 50%; 
+  transform: translateX(-50%); 
+}
+
+.row2 {
+  display: none;
+}
+.menu {
+  display: flex;
+  flex-wrap: wrap;
 
 }
 
+.menu li {
+  flex: 1 1 25%;
+  max-width: 25%;
+
+}
+
+@media only screen and (max-width: 500px) {
+  .nav {
+    width: 100%;
+    padding-right: 45px; 
+    transform: translateX(-100%);
+    overflow: hidden;
+  }
+
+  .open .nav {
+    transform: translateX(0);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  .icon {
+    display: block;
+  }
+
+  .nav-close {
+    display: block;
+    
+  }
+
+  
+  .nav-active .nav {
+    transform: translateX(0);
+  }
+  .nav-links li {
+    margin: 10px;
+  }
+  
+}
+
 @media screen and (max-width: 500px) {
-  .row {
+  .row1,
+  .row2 {
     position: relative;
     width: 100%;
     height: 100%;
     flex-direction: column;
     align-self: center;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
   }
 
   #one,
   #two,
   #three,
-  #four {
+  #four,
+  #five,
+  #six,
+  #seven,
+  #eight  {
     width: 50%;
     height: 100px;
   }
@@ -138,11 +281,53 @@ h2 {
   .main-nav .icon {
     display: block;
   }
-   
+
+  .nav {
+    position: fixed;
+    z-index: 9999;
+    width: 220px; 
+    height: 100%;
+    top: 0;
+    right: -270px;
+    background-color: white;
+    border-left: 1.5px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-close-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    transition: none;
+  }
+
+  .icon {
+    display: block;
+    top: 10px;
+    right: 0;
+    cursor: pointer;
+  }
+  .menu li {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .nav-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+  }
+
+  
 }
 
 @media screen and (min-width: 500px) and (max-width: 800px){
-  .row {
+  .row1,
+  .row2 {
     position: relative;
     width: 100%;
     height: 100%;
@@ -150,11 +335,17 @@ h2 {
  #one,
  #two,
  #three,
- #four {
+ #four,
+ #five,
+ #six,
+ #seven,
+ #eight  {
     flex: 1;     
  }
  #three,
- #four {
+ #four,
+ #seven,
+ #eight {
     order: 1;    
  }
  #break {
@@ -169,10 +360,50 @@ h2 {
  .main-nav .icon {
   display: block;
  }
+ 
+ .nav {
+  width: 100%;
+  transform: translateX(-100%);
+  overflow: hidden;
+  left: 100%;
+  width:auto
 }
 
+.open .nav {
+  transform: translateX(0);
+}
+
+.nav-links {
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+
+.nav-links li {
+  margin: 20px;
+}
+
+.nav-links a {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  
+}
+
+.container li {
+  text-align: left;
+  margin: 30px 15px;
+  margin-top: -5px;
+
+}
+
+}
+
+
 @media screen and (min-width: 800px) and (max-width: 1200px) {
-  .row {
+  .row1,
+  .row2 {
     position: relative;
     width: 100%;
     height: 100%;
@@ -180,11 +411,17 @@ h2 {
  #one,
  #two,
  #three,
- #four {
+ #four,
+ #five,
+ #six,
+ #seven,
+ #eight  {
   flex: 1;     
   }
  #three, 
- #four {
+ #four,
+ #seven,
+ #eight {
   order: 1;    
   }
  #break {
@@ -196,11 +433,49 @@ h2 {
   .icon img {
    display: none
   }
+  .main-nav .icon {
+    display: block;
+  }
+  
+  .nav {
+    position: fixed;
+    z-index: 9999;
+    width: 350px;
+    height: 100%;
+    top: 0;
+    right: -350px;
+    background-color: rgb(113, 229, 255);
+  }
 
+  .nav-close-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    transition: none;
+  }
+  
+  .icon {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 0;
+    padding: 20px;
+  }
+
+  .icon img {
+    height: 25px;
+    width: 25px;
+  }
 }
 
 @media screen and (min-width: 1200px){
- .row {
+ .row1,
+ .row2 {
    width: 1200px;
   }
   .secondary {
@@ -208,6 +483,17 @@ h2 {
   }
   .icon img {
    display: none
+  }
+  
+  #callAction {
+    position: sticky;
+    margin: 180px;
+  }
+  .row2 {
+    position: relative;
+    margin: -160px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
   
