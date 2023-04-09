@@ -39,7 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* add this line */
+  justify-content: flex-start; 
 }
 
 .container li {
@@ -162,6 +162,7 @@ li {
   margin: auto;
   position: relative;
   align-items: center;
+  text-align: center;
 }
 
 #one,
