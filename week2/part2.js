@@ -52,12 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
     /*Request 3: Click to Show More Content Boxes.*/
    /*There are some more content boxes waiting to show. When the user clicks the Call-to-Action
   button, show those hidden content boxes*/
-    const row2 = document.querySelector('.row2');
+  const callAction = document.querySelector("#callAction");
+const row2 = document.querySelector(".row2");
 
-    callAction.addEventListener('click', () => {
-    row2.style.display = row2.style.display === 'none' ? 'flex' : 'none';  /* When the element is clicked, the code checks the current display property of .row2 using the style.display property. If the current value is 'none', the code sets the display property of .row2 to 'flex' to make it visible. If the current value is 'flex', the code sets the display property to 'none' to hide it. */
-  });
-  
+callAction.addEventListener("click", function() {
+  row2.classList.toggle("active");
+});
   
 });
     
