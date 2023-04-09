@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code Output Examine</title>
+    <style>
+        #input1, #input2, #input3 {
+          width: 80%;
+          height: 150px; 
+        }
+        #output1, #output2, #output3 {
+          width: 80%;
+          height: 50px; 
+        }
+      </style>
+  </head>
+  <body>
+    <h2>Code Output Examine (by ChatGPT)</h2>
+    <p>Code inside the textareas by Kristina</p>
+    <div>
+        <h3>Assignment 1: Function and Array--Complete the function to find the max number of the passing array of numbers.</h3>
+      <textarea id="input1">
+        function max(numbers) {
+          let maxN = numbers[0]; //assign maxN to first element in numbers
+          for (let i=1; i < numbers.length; i++) //start from 2nd element
+          { if (numbers[i] > maxN) {
+              maxN = numbers[i];} //set maxN to newfound maximum number
+          } 
+          return maxN;
+        }
+        
+        console.log(max([1, 2, 4, 5])); // expected output: 5
+        console.log(max([5, 2, 7, 1, 6])); // expected output: 7
+      </textarea>
+      <br>
+      <button onclick="runCode(1)">Run</button>
+      <button onclick="clearOutput(1)">Clear</button>
+      <br><br>
+      <textarea id="output1"></textarea>
+    </div>
+    <hr>
+    <div>
+        <h3>Assignment 2: Function and Object--Complete the function to calculate the result of the passing object.</h3>
+        <textarea id="input2">
+          function calculate(args) {
+             let total = 0;
+             if (args.op === '+') { //args.op instead of args[2] because it is a property of the args object, and should be accessed using dot notation.
+                  total = args.n1 + args.n2;//use args.n1 and args.n2 to access the values of the n1 and n2 properties of the args object.
+              } else if (args.op === '-') {
+                  total = args.n1 - args.n2;
+              } else {
+                  total = 'Not supported';
+              } return total;
+          }
+          
+          console.log(calculate({ n1: 2, n2: 3, op: '+' })); // expected output: 5
+          console.log(calculate({ n1: 5, n2: 2, op: '-' })); // expected output: 3
+          console.log(calculate({ n1: 1, n2: 6, op: 'x' })); // expected output: 'Not supported'
+        </textarea>
+        <br>
+        <button onclick="runCode(2)">Run</button>
+        <button onclick="clearOutput(2)">Clear</button>
+        <br><br>
+        <textarea id="output2"></textarea>
+      </div>
+      <hr>
+      <div>
+      <h3>Assignment 3: Function, Array, and Object--Complete the function below to calculate the total price of all products after applying a discount.</h3>
+      <textarea id="input3">
+        function calculate(data) {
+            let total = 0;
+            for (let i = 0; i < data.products.length; i++ ){
+                total += data.products[i].price; //calculate total price of products first
+            } return total*(1-data.discount) //calculate discount
+            
+        }
+        const discountedPrice = calculate({
+            discount: 0.1, 
+            products: [
+                {name: "Product 1", price: 100}, 
+                {name: "Product 2", price: 700}, 
+                {name: "Product 3", price: 250}
+            ]
+        });
+        console.log(discountedPrice) // show the total price of all products after applying a discount
+      </textarea>
+      <br>
+      <button onclick="runCode(3)">Run</button>
+      <button onclick="clearOutput(3)">Clear</button>
+      <br><br>
+      <textarea id="output3"></textarea>
+    </div>
+    <script>
+      function runCode(index) {
+        // Get the input and output elements
+        let inputElement = document.getElementById("input" + index);
+        let outputElement = document.getElementById("output" + index);
+
+        // Get the code from the input element
+        let code = inputElement.value;
+
+        // Evaluate the code and capture the console output
+        let consoleOutput = "";
+        try {
+          // Create a new function to capture console.log output
+          let consoleLog = function(value) {
+            consoleOutput += value + "\n";
+          };
+          // Replace the console.log function with our own
+          console.log = consoleLog;
+          // Evaluate the code
+          eval(code);
+        } catch (error) {
+          consoleOutput += error;
+        }
+
+        // Output the console output to the output element
+        outputElement.value = consoleOutput;
+      }
+
+      function clearOutput(index) {
+        // Get the output element and clear its value
+        let outputElement = document.getElementById("output" + index);
+        outputElement.value = "";
+      }
+    </script>
+  </body>
+</html>
