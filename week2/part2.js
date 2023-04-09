@@ -58,17 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     row2.style.display = row2.style.display === 'none' ? 'flex' : 'none';  /* When the element is clicked, the code checks the current display property of .row2 using the style.display property. If the current value is 'none', the code sets the display property of .row2 to 'flex' to make it visible. If the current value is 'flex', the code sets the display property to 'none' to hide it. */
   });
   
+  
 });
-
-
-  
-  
-  
-  
-
-
-
-
-
-  
+    
   
