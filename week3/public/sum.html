@@ -3,22 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Summation Calculator</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $("#submitBtn").click(function(e) {
-        e.preventDefault();
-        const number = $("#numberInput").val();
-        $.ajax({
-          url: "/getData", type: "GET", data: { number: number },
-          success: function(data) { $("#resultDiv").html(data);},
-          error: function(jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-          }
-        });
-      });
-    });
-  </script>
 </head>
 <body>
   <h1>Summation Calculator</h1>
@@ -28,5 +12,19 @@
     <button type="submit" id="submitBtn">Submit</button>
   </form>
   <div id="resultDiv"></div>
+  <script>
+    const submitBtn = document.getElementById("submitBtn");
+    const numberInput = document.getElementById("numberInput");
+    const resultDiv = document.getElementById("resultDiv");
+    
+    submitBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      const number = numberInput.value;
+      fetch(`/getData?number=${number}`)
+        .then(response => response.text())
+        .then(data => resultDiv.innerHTML = data)
+        .catch(error => console.log(error));
+    });
+  </script>
 </body>
 </html>
