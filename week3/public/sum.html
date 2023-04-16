@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Summation Calculator</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#submitBtn").click(function(e) {
+        e.preventDefault();
+        const number = $("#numberInput").val();
+        $.ajax({
+          url: "/getData", type: "GET", data: { number: number },
+          success: function(data) { $("#resultDiv").html(data);},
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Summation Calculator</h1>
+  <form>
+    <label for="numberInput">Enter a number:</label>
+    <input type="text" id="numberInput" name="number">
+    <button type="submit" id="submitBtn">Submit</button>
+  </form>
+  <div id="resultDiv"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Result
+  body
+    if (message === 'Lack of Parameter')
+      h1(style='color: red; font-size: 50px; text-align: center;') Lack of Parameter
+    else if (message === 'Wrong Parameter')
+      h1(style='color: red; font-size: 50px; text-align: center;') Wrong Parameter
+    else
+      h1(style='color: black; font-size: 100px; text-align: center;') #{message}
+      div(style='color: blueviolet; font-size: 50px; text-align: center;') Here's a doggo 
+      div(style='color: orange; font-size: 50px; text-align: center;') ૮ฅ・ﻌ・აฅ  
+      div(style='text-align: center;')
+        img(src=imageUrl alt='Doggo' style='width: 30%; height: auto;display: block; margin: 0 auto;')
