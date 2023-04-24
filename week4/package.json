@@ -1,10 +1,13 @@
 {
   "name": "week4",
   "version": "1.0.0",
+  "homepage": "https://krislin995.github.io/remote-assignments/",
   "description": "",
-  "main": "assignment1.js",
+  "main": "assignment3.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
   },
   "keywords": [],
   "author": "",
